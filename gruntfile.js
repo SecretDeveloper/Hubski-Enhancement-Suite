@@ -1,5 +1,10 @@
 module.exports = function(grunt) {
 
+// IMPORTANT
+// Change the following line  to point to the correct location for the pem file on your local machine
+var pemKey = '/home/gary/.ssh/hes/hes.pem';
+
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -56,7 +61,7 @@ module.exports = function(grunt) {
       myExtension: {
         'src': 'build/chrome/',
         'dest': 'build/crx/',
-        'privateKey': '/home/gary/.ssh/hes/hes.pem',
+        'privateKey': pemKey,
         'filename': 'hubski_enhancement_suite.crx'
       }
     }
