@@ -20,7 +20,7 @@
         ],
         "js": [
             "jquery-1.8.3.min.js",
-            "hubski_enhancement_suite.user.js"
+            "hubski_enhancement_suite.user.min.js"
         ],
         "run_at": "document_end"
     }],
