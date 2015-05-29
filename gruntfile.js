@@ -12,29 +12,18 @@ var pemKey = '/home/gary/.ssh/hes/hes.pem';
     copy: {
       main: {
         files: [
-          // includes files within path
+          // CHROME
           {
             expand: false,
-            src: ['src/jquery-1.8.3.min.js'],
-            dest: 'build/chrome/jquery-1.8.3.min.js',
-            filter: 'isFile'
+            src: ['src/jquery-1.8.3.min.js','build/hubski_enhancement_suite.user.min.js'],
+            dest: 'build/chrome/',
+            filter: 'isFile',
+            flatten: true
           },
           {
             expand: true,
-            src: ['*.png'],
+            src: ['*.png','*.pxm'],
             dest: 'build/chrome/',
-            filter: 'isFile'
-          },
-          {
-            expand: true,
-            src: ['*.pxm'],
-            dest: 'build/chrome/',
-            filter: 'isFile'
-          },
-          {
-            expand: false,
-            src: ['build/hubski_enhancement_suite.user.min.js'],
-            dest: 'build/chrome/hubski_enhancement_suite.user.min.js',
             filter: 'isFile'
           },
           {
@@ -42,6 +31,22 @@ var pemKey = '/home/gary/.ssh/hes/hes.pem';
             src:['chrome/manifest.json'],
             dest:'build/chrome/manifest.json',
             filter: 'isFile'
+          },
+
+          // SAFARI
+          {
+            expand:false,
+            src: ['src/jquery-1.8.3.min.js','build/hubski_enhancement_suite.user.min.js'],
+            dest:'build/hes.safariextension',
+            filter:'isFolder'
+          },
+
+          // FIREFOX
+          {
+            expand:false,
+            src: ['src/jquery-1.8.3.min.js','build/hubski_enhancement_suite.user.min.js'],
+            dest:'build/firefox',
+            filter:'isFolder'
           }
         ]
       }
